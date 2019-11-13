@@ -1,5 +1,6 @@
 __author__ = 'Yucong Rao'
 
+import socket
 '测试参数'
 # def aa(a,b,c=0,*arg,name,gender,**kw):
 #     print(a,b,c,arg,name,gender,kw,sep=',')
@@ -13,7 +14,7 @@ __author__ = 'Yucong Rao'
 # from email.utils import parseaddr, formataddr
 
 # import smtplib
-    
+
 # def _format_addr(s):
 #     name, addr = parseaddr(s)
 #     return formataddr((Header(name, 'utf-8').encode(), addr))
@@ -27,7 +28,7 @@ __author__ = 'Yucong Rao'
 # msg['From'] = _format_addr('Python爱好者 <%s>' % from_addr)
 # msg['To'] = _format_addr('管理员 <%s>' % to_addr)
 # msg['Subject'] = Header('来自SMTP的问候……', 'utf-8').encode()
-    
+
 # server = smtplib.SMTP(smtp_server, 25)
 # server.set_debuglevel(1)
 # server.login(from_addr, password)
@@ -35,23 +36,28 @@ __author__ = 'Yucong Rao'
 # server.quit()
 
 '由域名解析得到ip'
-import socket
+
+
 def getIP(domain):
     myaddr = socket.getaddrinfo(domain, 'http')
-    for i in myaddr:
-        print(myaddr[3][0])
+    print(myaddr[0][4][0])
+
+
 getIP('www.baidu.com')
 
+
 def get_ip_list(domain):  # 获取域名解析出的IP列表
-            ip_list = []
-            try:
-                addrs = socket.getaddrinfo(domain, None)
-                for item in addrs:
-                    if item[4][0] not in ip_list:
-                        ip_list.append(item[4][0])
-            except Exception as e:
-                print(str(e))
-            return ip_list
+    ip_list = []
+    try:
+        addrs = socket.getaddrinfo(domain, None)
+        for item in addrs:
+            if item[4][0] not in ip_list:
+                ip_list.append(item[4][0])
+    except Exception as e:
+        print(str(e))
+    return ip_list
+
+
 print(get_ip_list('www.baidu.com'))
 
 '测试闭包'
@@ -135,7 +141,6 @@ print(get_ip_list('www.baidu.com'))
 #     print('测试失败!')
 
 
-
 '测试类的访问限制'
 '''和静态语言不同，Python允许对实例变量绑定任何数据，也就是说，对于两个实例变量，
 虽然它们都是同一个类的不同实例，但拥有的变量名称都可能不同。'''
@@ -181,7 +186,7 @@ print(get_ip_list('www.baidu.com'))
 # print(bart.get_age(), bart.get_name(), bart.__name)
 
 
-#测试type(),isinstance()与dir()
+# 测试type(),isinstance()与dir()
 '''type()用于获取对象类型  isinstance()用来判断是否是对象类型 如果要获得一个对象的所有属性和方法，可以使用dir()函数'''
 '''dir()配合getattr()、setattr()以及hasattr()，我们可以直接操作一个对象的状态'''
 # print('type(123) =', type(123))
@@ -211,5 +216,3 @@ print(get_ip_list('www.baidu.com'))
 # print('s.score =', s.score)
 # # ValueError: score must between 0 ~ 100!
 # s.score = 9999
-
-
