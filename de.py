@@ -1,5 +1,6 @@
 __author__ = 'Yucong Rao'
 
+
 import socket
 '测试参数'
 # def aa(a,b,c=0,*arg,name,gender,**kw):
@@ -38,27 +39,27 @@ import socket
 '由域名解析得到ip'
 
 
-def getIP(domain):
-    myaddr = socket.getaddrinfo(domain, 'http')
-    print(myaddr[0][4][0])
+# def getIP(domain):
+#     myaddr = socket.getaddrinfo(domain, 'http')
+#     print(myaddr[0][4][0])
 
 
-getIP('www.baidu.com')
+# getIP('www.baidu.com')
 
 
-def get_ip_list(domain):  # 获取域名解析出的IP列表
-    ip_list = []
-    try:
-        addrs = socket.getaddrinfo(domain, None)
-        for item in addrs:
-            if item[4][0] not in ip_list:
-                ip_list.append(item[4][0])
-    except Exception as e:
-        print(str(e))
-    return ip_list
+# def get_ip_list(domain):  # 获取域名解析出的IP列表
+#     ip_list = []
+#     try:
+#         addrs = socket.getaddrinfo(domain, None)
+#         for item in addrs:
+#             if item[4][0] not in ip_list:
+#                 ip_list.append(item[4][0])
+#     except Exception as e:
+#         print(str(e))
+#     return ip_list
 
 
-print(get_ip_list('www.baidu.com'))
+# print(get_ip_list('www.baidu.com'))
 
 '测试闭包'
 # total = 0 # 这是一个全局变量
@@ -216,3 +217,4 @@ print(get_ip_list('www.baidu.com'))
 # print('s.score =', s.score)
 # # ValueError: score must between 0 ~ 100!
 # s.score = 9999
+
