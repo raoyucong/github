@@ -1,5 +1,6 @@
 import socket
 import ssl
+import os
 
 # 创建socket
 #s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -31,5 +32,9 @@ s.close()
 header, html = data.split(b'\r\n\r\n', 1)
 print(header.decode('utf-8'))
 # 把接收的数据写入文件:
-with open('sina.html', 'wb') as f:
+path = os.path.dirname(__file__)
+if not os.path.exists(path + '/runresult'):
+    os.mkdir(path + '/runresult')
+path = os.path.join(path + '/runresult')
+with open(path + '/sina.html', 'wb') as f:
     f.write(html)

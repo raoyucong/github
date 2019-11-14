@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>主页</title>
+    </head>
+    <body>
+        <center><p>Welcome to flask!</p></center>
+        <center><form  method="post"> <!--action="/signin"-->
+            <legend>Please sign in:</legend>
+            <p><input name="username" placeholder="Username" value="{{ username }}"></p>
+            <p><input name="password" placeholder="Password" type="password"></p>
+            <p><button type="submit">Sign In</button></p>
+        </form></center>
+    </body>
+</html>
