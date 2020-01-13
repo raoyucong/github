@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>html学习，第一节！</title>
+        <style type="text/css">
+            img {display: block;margin: 0 auto;}
+        </style>
+        <link href="styles/css1.css" rel="stylesheet" type="text/css">
+        <script src="scripts/scripts1.js"></script>
+    </head>
+    <body class="content" >
+        <!--学习的内容 -->
+        <div align="center"><button class="title">开始学习</button></div>
+        <h3 align="center">块级元素和内联元素</h3>
+        <p><strong>&nbsp;在HTML中有两种元素类别：块级元素和内联元素。</strong></p>
+        <ul>
+            <li>
+                <b>块级元素：</b>
+                其代码
+                <b>如块状显示</b>
+                。块级元素通常用于展示页面上结构化的内容。如：段落、列表、导航菜单、页脚等。
+                一个块级元素不可被嵌套进内联元素中，但可嵌套在其它块级元素中。
+            </li>
+            <li>
+                <b>内联元素：</b>
+                它常出现在块级元素中并包裹着一小部分文档内容。内联元素在形式上通常
+                <b>如行状显示。</b>
+                它通常出现在一堆文字之间。如，超链接元素&#60a>，强调元素&#60em>元素和&#60strong>元素都是内联元素。
+            </li>
+        </ul>
+        <p><b>空元素</b></p>
+        <ul>
+            <li>一个完整元素=开始标签+内容+结束标签,但该公式并不能适用所有的HTML元素。</li>
+            <li>一些元素只有一个标签，元素的标签内附有一些额外信息。这样的元素叫做<b>“空元素”</b>。</li>
+            <li>&#60img>就是一个空元素。它通常用来插入一张指定的图片。</li>
+        </ul>
+        <h3 align="center">学习CSS重点</h3>
+        <ul>
+            <li>学习CSS注意两个重点：一是<b>选择器</b>。二是<b>样式</b>。</li>
+            <li>CSS的选择器就像化妆盒。它告诉浏览器选择哪个标签美化。</li>
+            <li>CSS的样式就像化妆盒中的眼影、腮红、口红等。它告诉浏览器要把网页美化成什么样子。好比女孩儿化妆的效果，烟熏妆、桃花妆、OL妆等等。</li>
+        </ul>
+        <p><b>CSS规则集</b></p>
+        <div id="qcontent" class="content-intro" data-qtype="4">
+            <img src="imags\css.png" height="170" width="222" alt="CSS规则集">
+            <p><br></p>
+            <p>以上元素是CSS的<b>规则集</b>。它由以下几个部分构成：</p>
+            <ul>
+                <li>
+                    <span style="font-weight: bold;">选择器：</span>
+                    HTML 元素的名称位于规则集开始（本例是标签选择器 ）。HTML 元素可选择一个或多个样式添加。
+                    给不同元素添加样式只需更改选择器即可。
+                </li>
+                <li>
+                    <span style="font-weight: bold;">声明：</span>
+                    表示一个单独的规则。由属性和属性值组成。
+                </li>
+                <li>
+                    <span style="font-weight: bold;">属性：</span>
+                    表示改变 HTML 元素样式的途径。本例中color就是改变&lt;P&gt;元素字体颜色的途径。
+                </li>
+                <li>
+                    <span style="font-weight: bold;">属性的值：</span>
+                    它从指定属性的众多外观中选择了一个值。本例中，red就是color的值。颜色种类成千上万，
+                    除了red外，color的值还可以有yellow, pink, black等等。
+                </li>
+            </ul>
+            <p>注意</p>
+            <ul>
+                <li>除了选择器的部分，每个规则集都应该包含在一对的<b>大括号里：{&nbsp; &nbsp;}</b>。</li>
+                <li>在每个声明里要用<b>冒号</b>将属性与属性值分隔开。</li>
+                <li>在每个规则集里要用<b>分号</b>将多个声明分隔开：</li>
+            </ul>
+            <pre lang="html" style="max-width: 100%;">
+                <a class="code-try" title="编辑代码"><i class="icon-edit"></i></a>
+                <code class="html hljs xml">
+                    p{  
+                        color:red; 
+                        width:500px; 
+                        border:1px solid black;
+                    }
+                </code>
+            </pre>
+            <p>我们也可利用CSS选择多个元素，将其同时修改成一种样式，不同的选择器用逗号分开。如下面的例子：</p>
+            <pre lang="javascript" style="max-width: 100%;">
+                <a class="code-try" title="编辑代码"><i class="icon-edit"></i></a>
+                <code class="javascript hljs">
+                    p,li,h1{
+                            color:red;
+                            }
+                </code>
+            </pre><p>段落、表格、标题元素的样式均修改为红色。</p>
+        </div>
+        <div class="play-item">
+            <div class="play-title" data-qid="65684" data-qtype="4"><h3 align="center" class="content-title">CSS盒模型的应用</h3></div>
+            <div id="qcontent" class="content-intro" data-qtype="4">
+                <p>CSS 布局主要就是基于盒模型。每个占据页面空间的块都能有这样的属性：</p>
+                <ul>
+                    <li><b>padding: 内边距。</b>它围绕着内容的空间。</li>
+                    <li><b>border: 边框。</b>它紧接着内边距的线。</li>
+                    <li><b>margin: 外边距。</b>它围绕元素外部的空间。</li>
+                </ul>
+                <img src="imags/box-model.png" height="300" width="300" alt="CSS盒模型">
+            </div>
+        </div>
+        <h3>JavaScript概述</h3>
+        <div>
+            <p><b>JavaScript</b>(以下采用缩写JS)<b>是一门动态编程语言。</b></p>
+            <ul>
+                <li><p>当它应用于HTML文档时，可增加网页的<b>动态交互特性。</b>比如：验证输入表单的正确性；改变网页上的文字；
+                    在网页上设置实时时钟等。</p></li>
+                <li><p>JS基于浏览器运行，可以快速的响应用户动态行为。</p></li>
+                <li><p>JS脚本可与HTML混用，也可<b>单独存为JS文件然后在HTML中引用。</b>我们推荐后者。</p></li>
+            </ul>
+            
+        </div>
+        <div>
+            <p><b>JS是一门<b>易上手难精通</b>的编程语言。</b></p>
+            <ul>
+                <li><p><b>易学</b>体现在你能够轻易的获取并使用它。它不需要经过服务器，可被任意人下载并使用；</p></li>
+                <li><p><b>难精</b>则体现在它是一门复杂的编程语言。JS的交互功能多且其语法复杂，它还关联到HTML的Dom结构。又由于各厂商
+                    （如微软，它出品的浏览器是edge;厂商如Alphabet,它出品的浏览器是google）的浏览器对JS有差异化的处理，使JS难以调试。</p></li>
+                <li>因此，相比精通HTML和CSS，想要精通JS，你得投入更多的时间。</li>
+            </ul>   
+        </div>
+        
+    </body>
+</html>
